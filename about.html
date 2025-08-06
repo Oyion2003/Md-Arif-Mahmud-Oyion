@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Md Arif Mahmud Oyion - About & Contact</title>
+    <link rel="icon" type="image/jpeg" href="logo.png">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        /* Common styles for both themes */
+        .skill-badge {
+            padding: 0.5rem 1rem;
+            border-radius: 9999px;
+            font-size: 0.875rem;
+            font-weight: 500;
+        }
+        /* Dark mode-specific styles for the badge */
+        .dark .skill-badge {
+            background-color: #0e7490;
+            color: white;
+        }
+        /* Light mode-specific styles for the badge */
+        html:not(.dark) .skill-badge {
+            background-color: #0891b2;
+            color: white;
+        }
+    </style>
+</head>
+<body class="transition-colors duration-300 ease-in-out">
+
+    <header class="sticky top-0 z-50 backdrop-blur-lg">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="index.html" class="flex items-center">
+                <img src="logo.png" alt="Md Arif Mahmud Oyion" class="h-8 w-8 rounded-full">
+            </a>
+            <div class="hidden md:flex space-x-8 items-center">
+                <a href="index.html" class="nav-link text-slate-300 hover:text-cyan-400 transition-colors">Home</a>
+                <a href="about.html" class="text-cyan-400 font-semibold transition-colors">About & Contact</a>
+                <a href="projects.html" class="nav-link text-slate-300 hover:text-cyan-400 transition-colors">Projects</a>
+                <a href="experience.html" class="nav-link text-slate-300 hover:text-cyan-400 transition-colors">Experience</a>
+                <a href="education.html" class="nav-link text-slate-300 hover:text-cyan-400 transition-colors">Education</a>
+                <a href="creative.html" class="nav-link text-slate-300 hover:text-cyan-400 transition-colors">Creative Work</a>
+            </div>
+            <div class="flex items-center space-x-4">
+                <button id="theme-toggle" class="p-2 rounded-full text-white bg-slate-800 transition-colors hover:bg-slate-700">
+                    <img id="theme-icon" src="dark.jpg" alt="Theme Toggle" class="h-6 w-6 rounded-full object-cover">
+                </button>
+                <button id="mobile-menu-button" class="md:hidden text-white">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+                    </svg>
+                </button>
+            </div>
+        </nav>
+        <div id="mobile-menu" class="hidden md:hidden bg-slate-800">
+            <a href="index.html" class="block text-center py-2 px-4 text-sm text-slate-300 hover:bg-slate-700">Home</a>
+            <a href="about.html" class="block text-center py-2 px-4 text-sm text-cyan-400 font-semibold hover:bg-slate-700">About & Contact</a>
+            <a href="projects.html" class="block text-center py-2 px-4 text-sm text-slate-300 hover:bg-slate-700">Projects</a>
+            <a href="experience.html" class="block text-center py-2 px-4 text-sm text-slate-300 hover:bg-slate-700">Experience</a>
+            <a href="education.html" class="block text-center py-2 px-4 text-sm text-slate-300 hover:bg-slate-700">Education</a>
+            <a href="creative.html" class="block text-center py-2 px-4 text-sm text-slate-300 hover:bg-slate-700">Creative Work</a>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-6 py-8 md:py-12">
+        <section id="about" class="page">
+            <h2 class="text-3xl md:text-4xl font-bold text-white text-center mb-12">About Me</h2>
+            <div class="flex flex-col md:flex-row items-center gap-12">
+                <div class="md:w-1/3 flex justify-center">
+                    <img src="profile.jpg" onerror="this.onerror=null;this.src='https://placehold.co/350x450/1e293b/94a3b8?text=Profile';" alt="About Md Arif Mahmud Oyion" class="rounded-lg shadow-xl w-full max-w-sm">
+                </div>
+                <div class="md:w-2/3 text-lg text-slate-400 space-y-4">
+                    <p>Hello! I'm Md Arif Mahmud Oyion, a Computer Science student at AIUB with a strong desire to build a career in software engineering. My journey in technology is driven by a curiosity to solve complex problems and create applications that make a difference.</p>
+                    <p>I'm currently focused on developing my skills in software development and am eager to learn from experienced professionals in an internship role. My academic projects have given me a solid foundation in Java and electronics.</p>
+                    <p>Outside of my studies, my experiences in leadership and adventure have taught me discipline and teamwork, qualities I'm excited to bring to a technical team.</p>
+                    <div class="mt-8">
+                        <h3 class="text-2xl font-bold text-white mb-4">My Skills</h3>
+                        <div class="flex flex-wrap gap-3">
+                            <span class="skill-badge">Java</span>
+                            <span class="skill-badge">Python</span>
+                            <span class="skill-badge">C#</span>
+                            <span class="skill-badge">C++</span>
+                            <span class="skill-badge">SQL</span>   
+                            <span class="skill-badge">AutoCAD</span>
+                            <span class="skill-badge">Shapr3D</span>
+                            <span class="skill-badge">Git & GitHub</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-white text-center mb-4">Get In Touch</h2>
+                <p class="text-slate-400 text-center max-w-xl mx-auto mb-12">I'm currently available for internship roles and open to new opportunities. Feel free to send me a message or contact me directly.</p>
+                
+                <div class="max-w-xl mx-auto bg-slate-800 p-8 rounded-lg mb-12">
+                    <div class="flex flex-col space-y-6">
+                        <div class="flex items-center">
+                            <svg class="w-6 h-6 text-cyan-400 mr-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" />
+                            </svg>
+                            <a href="mailto:arifmahmudoyion@gmail.com" class="text-slate-300 hover:text-cyan-400">arifmahmudoyion@gmail.com</a>
+                        </div>
+                        <div class="flex items-center">
+                            <svg class="w-6 h-6 text-cyan-400 mr-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.211-.998-.552-1.348l-2.475-2.475c-.337-.337-.836-.337-1.173 0l-.827.827c-.24.24-.582.353-.898.283a9.723 9.723 0 01-4.286-4.286c-.07-.316.043-.658.283-.898l.827-.827c.337-.337.337-.836 0-1.173L8.098 3.302a2.25 2.25 0 00-1.348-.552H5.25A2.25 2.25 0 003 5.25v1.5z" />
+                            </svg>
+                            <span class="text-slate-300">+880 1777-648394</span>
+                        </div>
+                        <div class="flex items-center">
+                            <svg class="w-6 h-6 text-cyan-400 mr-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" />
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z" />
+                            </svg>
+                            <span class="text-slate-300">Road 44, House 32, Bashundhara, Dhaka 3322</span>
+                        </div>
+                    </div>
+                </div>
+
+                <form class="max-w-xl mx-auto">
+                    <div class="mb-4">
+                        <label for="name" class="block text-slate-300 mb-2">Name</label>
+                        <input type="text" id="name" name="name" class="w-full px-4 py-2 bg-slate-800 border border-slate-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-cyan-500 text-white">
+                    </div>
+                    <div class="mb-4">
+                        <label for="email" class="block text-slate-300 mb-2">Email</label>
+                        <input type="email" id="email" name="email" class="w-full px-4 py-2 bg-slate-800 border border-slate-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-cyan-500 text-white">
+                    </div>
+                    <div class="mb-6">
+                        <label for="message" class="block text-slate-300 mb-2">Message</label>
+                        <textarea id="message" name="message" rows="5" class="w-full px-4 py-2 bg-slate-800 border border-slate-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-cyan-500 text-white"></textarea>
+                    </div>
+                    <div class="text-center">
+                        <button type="submit" class="bg-cyan-500 hover:bg-cyan-600 text-white font-bold py-3 px-8 rounded-lg transition-colors text-lg">Send Message</button>
+                    </div>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-slate-900 border-t border-slate-800 mt-12">
+        <div class="container mx-auto px-6 py-6 text-center text-slate-400">
+            <p>&copy; 2025 Md Arif Mahmud Oyion. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const themeToggle = document.getElementById('theme-toggle');
+            const themeIcon = document.getElementById('theme-icon');
+            const htmlElement = document.documentElement;
+            const body = document.body;
+            const header = document.querySelector('header');
+
+            const applyTheme = (theme) => {
+                if (theme === 'dark') {
+                    htmlElement.classList.add('dark');
+                    body.classList.add('bg-slate-900', 'text-slate-300');
+                    body.classList.remove('bg-white', 'text-slate-800');
+                    header.classList.add('bg-slate-900/70');
+                    header.classList.remove('bg-white/70');
+                    themeIcon.src = 'light.jpg';
+                } else {
+                    htmlElement.classList.remove('dark');
+                    body.classList.add('bg-white', 'text-slate-800');
+                    body.classList.remove('bg-slate-900', 'text-slate-300');
+                    header.classList.add('bg-white/70');
+                    header.classList.remove('bg-slate-900/70');
+                    themeIcon.src = 'dark.jpg';
+                }
+            };
+
+            const getInitialTheme = () => {
+                if (localStorage.getItem('theme')) {
+                    return localStorage.getItem('theme');
+                }
+                return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+            };
+
+            const initialTheme = getInitialTheme();
+            applyTheme(initialTheme);
+            
+            themeToggle.addEventListener('click', () => {
+                const currentTheme = htmlElement.classList.contains('dark') ? 'dark' : 'light';
+                const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+                
+                localStorage.setItem('theme', newTheme);
+                applyTheme(newTheme);
+            });
+
+            mobileMenuButton.addEventListener('click', function() {
+                mobileMenu.classList.toggle('hidden');
+            });
+
+            mobileMenu.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileMenu.classList.add('hidden');
+                });
+            });
+        });
+    </script>
+</body>
+</html>

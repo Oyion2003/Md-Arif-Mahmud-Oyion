@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Md Arif Mahmud Oyion - Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        /* Style for active nav link */
+        .nav-link.active {
+            color: #06b6d4; /* Tailwind's cyan-500 */
+        }
+        /* Simple fade-in animation */
+        .page {
+            animation: fadeIn 0.5s ease-in-out;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        /* Common styles for the skill badge */
+        .skill-badge {
+            padding: 0.5rem 1rem;
+            border-radius: 9999px;
+            font-size: 0.875rem;
+            font-weight: 500;
+        }
+        /* Dark mode-specific styles for the badge */
+        .dark .skill-badge {
+            background-color: #0e7490;
+            color: white;
+        }
+        /* Light mode-specific styles for the badge */
+        html:not(.dark) .skill-badge {
+            background-color: #0891b2;
+            color: white;
+        }
+    </style>
+</head>
+<body class="transition-colors duration-300 ease-in-out">
+
+    <header class="sticky top-0 z-50 backdrop-blur-lg">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#home" class="text-2xl font-bold text-white hover:text-cyan-400 transition-colors">AMO</a>
+            <div class="hidden md:flex space-x-8 items-center">
+                <a href="#home" class="nav-link text-slate-300 hover:text-cyan-400 transition-colors">Home</a>
+                <a href="#about" class="nav-link text-slate-300 hover:text-cyan-400 transition-colors">About & Contact</a>
+                <a href="#projects" class="nav-link text-slate-300 hover:text-cyan-400 transition-colors">Projects</a>
+                <a href="#experience" class="nav-link text-slate-300 hover:text-cyan-400 transition-colors">Experience</a>
+                <a href="#education" class="nav-link text-slate-300 hover:text-cyan-400 transition-colors">Education</a>
+                <a href="#creative" class="nav-link text-slate-300 hover:text-cyan-400 transition-colors">Creative Work</a>
+            </div>
+            <div class="flex items-center space-x-4">
+                <button id="theme-toggle" class="p-2 rounded-full text-white bg-slate-800 transition-colors hover:bg-slate-700">
+                    <svg id="sun-icon" class="h-6 w-6 hidden" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M12 2.25a.75.75 0 01.75.75v2.25a.75.75 0 01-1.5 0V3a.75.75 0 01.75-.75zM7.5 12a4.5 4.5 0 119 0 4.5 4.5 0 01-9 0zM18.75 7.5a.75.75 0 01.75.75h2.25a.75.75 0 010 1.5H19.5a.75.75 0 01-.75-.75v-.75zM12 18a.75.75 0 01.75.75v2.25a.75.75 0 01-1.5 0V18a.75.75 0 01.75-.75zM4.5 9a.75.75 0 01.52.22l1.5 1.5a.75.75 0 01-1.06 1.06l-1.5-1.5A.75.75 0 014.5 9zM15 15a.75.75 0 01.53.22l1.5 1.5a.75.75 0 01-1.06 1.06l-1.5-1.5a.75.75 0 01.53-1.06zM2.25 12a.75.75 0 01.75-.75h2.25a.75.75 0 010 1.5H3a.75.75 0 01-.75-.75zM15 9a.75.75 0 01.53-.22l1.5-1.5a.75.75 0 011.06 1.06l-1.5 1.5a.75.75 0 01-1.06 0zM12 7.5a.75.75 0 01-.75-.75v-2.25a.75.75 0 011.5 0v2.25a.75.75 0 01-.75.75zM9 15a.75.75 0 01.53-1.28L11.03 15l-1.5 1.5a.75.75 0 01-1.06 0l-.75-.75a.75.75 0 010-1.06zM6.75 18.75a.75.75 0 01-1.06 0l-1.5-1.5a.75.75 0 011.06-1.06l1.5 1.5a.75.75 0 010 1.06z"/>
+                    </svg>
+                    <svg id="moon-icon" class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M9.544 2.825a.75.75 0 01.275 1.34A9.907 9.907 0 008.566 12a9.907 9.907 0 005.158 7.835c.196.111.276.34.195.553a.75.75 0 01-.671.49l-.161-.019a.75.75 0 01-.586-.569A10.952 10.952 0 017.25 12a10.952 10.952 0 016.924-10.428.75.75 0 01.67-.49z" />
+                    </svg>
+                </button>
+                <button id="mobile-menu-button" class="md:hidden text-white">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+                    </svg>
+                </button>
+            </div>
+        </nav>
+        <div id="mobile-menu" class="hidden md:hidden bg-slate-800">
+            <a href="#home" class="block nav-link text-center py-2 px-4 text-sm text-slate-300 hover:bg-slate-700">Home</a>
+            <a href="#about" class="block nav-link text-center py-2 px-4 text-sm text-slate-300 hover:bg-slate-700">About & Contact</a>
+            <a href="#projects" class="block nav-link text-center py-2 px-4 text-sm text-slate-300 hover:bg-slate-700">Projects</a>
+            <a href="#experience" class="block nav-link text-center py-2 px-4 text-sm text-slate-300 hover:bg-slate-700">Experience</a>
+            <a href="#education" class="block nav-link text-center py-2 px-4 text-sm text-slate-300 hover:bg-slate-700">Education</a>
+            <a href="#creative" class="block nav-link text-center py-2 px-4 text-sm text-slate-300 hover:bg-slate-700">Creative Work</a>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-6 py-8 md:py-12 space-y-24 md:space-y-32">
+
+        <section id="home" class="page min-h-[70vh] flex flex-col md:flex-row items-center justify-center text-center md:text-left pt-12 md:pt-0">
+            <div class="md:w-1/2">
+                <span class="text-cyan-400 font-semibold">Hello, I'm</span>
+                <h1 class="text-4xl md:text-6xl font-bold text-white mt-2 mb-4">Md Arif Mahmud Oyion</h1>
+                <h2 class="text-2xl md:text-3xl font-light text-slate-300 mb-6">Aspiring Software Engineer</h2>
+                <p class="max-w-lg mx-auto md:mx-0 text-slate-400 mb-8">I am a dedicated and enthusiastic computer science student with a passion for building innovative software solutions. I am actively seeking a software engineer internship to apply my skills and contribute to real-world projects.</p>
+                <a href="#projects" class="bg-cyan-500 hover:bg-cyan-600 text-white font-bold py-3 px-6 rounded-lg transition-colors text-lg">View My Projects</a>
+            </div>
+            <div class="md:w-1/2 mt-8 md:mt-0 flex justify-center">
+                <img src="profile.jpg" onerror="this.onerror=null;this.src='https://placehold.co/400x400/1e293b/94a3b8?text=AMO';" alt="Md Arif Mahmud Oyion" class="rounded-full w-64 h-64 md:w-80 md:h-80 object-cover border-4 border-slate-700 shadow-lg">
+            </div>
+        </section>
+
+        ---
+
+        <section id="about" class="page">
+            <h2 class="text-3xl md:text-4xl font-bold text-white text-center mb-12">About Me</h2>
+            <div class="flex flex-col md:flex-row items-center gap-12">
+                <div class="md:w-1/3 flex justify-center">
+                    <img src="profile.jpg" onerror="this.onerror=null;this.src='https://placehold.co/350x450/1e293b/94a3b8?text=Profile';" alt="About Md Arif Mahmud Oyion" class="rounded-lg shadow-xl w-full max-w-sm">
+                </div>
+                <div class="md:w-2/3 text-lg text-slate-400 space-y-4">
+                    <p>Hello! I'm Md Arif Mahmud Oyion, a Computer Science student at AIUB with a strong desire to build a career in software engineering. My journey in technology is driven by a curiosity to solve complex problems and create applications that make a difference.</p>
+                    <p>I'm currently focused on developing my skills in software development and am eager to learn from experienced professionals in an internship role. My academic projects have given me a solid foundation in Java and electronics.</p>
+                    <p>Outside of my studies, my experiences in leadership and adventure have taught me discipline and teamwork, qualities I'm excited to bring to a technical team.</p>
+                    <div class="mt-8">
+                        <h3 class="text-2xl font-bold text-white mb-4">My Skills</h3>
+                        <div class="flex flex-wrap gap-3">
+                            <span class="skill-badge">Java</span>
+                            <span class="skill-badge">Python</span>
+                            <span class="skill-badge">C#</span>
+                            <span class="skill-badge">C++</span>
+                            <span class="skill-badge">SQL</span>
+                            <span class="skill-badge">HTML5 & CSS3</span>
+                            <span class="skill-badge">JavaScript</span>
+                            <span class="skill-badge">Autocad</span>
+                            <span class="skill-badge">Shapr3D</span>
+                            <span class="skill-badge">Git & GitHub</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-white text-center mb-4">Get In Touch</h2>
+                <p class="text-slate-400 text-center max-w-xl mx-auto mb-12">I'm currently available for internship roles and open to new opportunities. Feel free to send me a message or contact me directly.</p>
+                
+                <div class="max-w-xl mx-auto bg-slate-800 p-8 rounded-lg mb-12">
+                    <div class="flex flex-col space-y-6">
+                        <div class="flex items-center">
+                            <svg class="w-6 h-6 text-cyan-400 mr-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" />
+                            </svg>
+                            <a href="mailto:arifmahmudoyion@gmail.com" class="text-slate-300 hover:text-cyan-400">arifmahmudoyion@gmail.com</a>
+                        </div>
+                        <div class="flex items-center">
+                            <svg class="w-6 h-6 text-cyan-400 mr-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.211-.998-.552-1.348l-2.475-2.475c-.337-.337-.836-.337-1.173 0l-.827.827c-.24.24-.582.353-.898.283a9.723 9.723 0 01-4.286-4.286c-.07-.316.043-.658.283-.898l.827-.827c.337-.337.337-.836 0-1.173L8.098 3.302a2.25 2.25 0 00-1.348-.552H5.25A2.25 2.25 0 003 5.25v1.5z" />
+                            </svg>
+                            <span class="text-slate-300">+880 1777-648394</span>
+                        </div>
+                        <div class="flex items-center">
+                            <svg class="w-6 h-6 text-cyan-400 mr-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" />
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z" />
+                            </svg>
+                            <span class="text-slate-300">Road 44, House 32, Bashundhara, Dhaka 3322</span>
+                        </div>
+                    </div>
+                </div>
+
+                <form class="max-w-xl mx-auto">
+                    <div class="mb-4">
+                        <label for="name" class="block text-slate-300 mb-2">Name</label>
+                        <input type="text" id="name" name="name" class="w-full px-4 py-2 bg-slate-800 border border-slate-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-cyan-500 text-white">
+                    </div>
+                    <div class="mb-4">
+                        <label for="email" class="block text-slate-300 mb-2">Email</label>
+                        <input type="email" id="email" name="email" class="w-full px-4 py-2 bg-slate-800 border border-slate-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-cyan-500 text-white">
+                    </div>
+                    <div class="mb-6">
+                        <label for="message" class="block text-slate-300 mb-2">Message</label>
+                        <textarea id="message" name="message" rows="5" class="w-full px-4 py-2 bg-slate-800 border border-slate-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-cyan-500 text-white"></textarea>
+                    </div>
+                    <div class="text-center">
+                        <button type="submit" class="bg-cyan-500 hover:bg-cyan-600 text-white font-bold py-3 px-8 rounded-lg transition-colors text-lg">Send Message</button>
+                    </div>
+                </form>
+            </div>
+        </section>
+
+        ---
+
+        <section id="projects" class="page">
+            <h2 class="text-3xl md:text-4xl font-bold text-white text-center mb-12">My Projects</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-slate-800 rounded-lg overflow-hidden shadow-lg hover:shadow-cyan-500/20 transition-shadow duration-300">
+                    <img src="project1.jpg" onerror="this.onerror=null;this.src='https://placehold.co/600x400/1e293b/94a3b8?text=Tour+Buddy';" alt="Tour Buddy Project" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-white mb-2">Tour Buddy</h3>
+                        <p class="text-slate-400 mb-4">A local travel guide hiring mobile application built using Java. The app facilitates connecting tourists with local guides for an authentic travel experience.</p>
+                        <div class="flex gap-4">
+                            <a href="#" class="text-cyan-400 hover:text-cyan-300 font-semibold">Source Code</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-slate-800 rounded-lg overflow-hidden shadow-lg hover:shadow-cyan-500/20 transition-shadow duration-300">
+                    <img src="project2.jpg" onerror="this.onerror=null;this.src='https://placehold.co/600x400/1e293b/94a3b8?text=DC+Power+Supply';" alt="DC Power Supply Project" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-white mb-2">DC Power Supply Project</h3>
+                        <p class="text-slate-400 mb-4">A hands-on electronics project to design and build a variable DC power supply, demonstrating foundational knowledge of circuits and hardware components.</p>
+                        <div class="flex gap-4">
+                            <a href="#" class="text-cyan-400 hover:text-cyan-300 font-semibold">View Details</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-slate-800 rounded-lg overflow-hidden shadow-lg hover:shadow-cyan-500/20 transition-shadow duration-300">
+                    <img src="project3.jpg" onerror="this.onerror=null;this.src='https://placehold.co/600x400/1e293b/94a3b8?text=Project+3';" alt="Future Project" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-white mb-2">Future Project</h3>
+                        <p class="text-slate-400 mb-4">More projects coming soon. I am always working on new and exciting things to expand my skills.</p>
+                        <div class="flex gap-4">
+                            <a href="#" class="text-cyan-400 hover:text-cyan-300 font-semibold">Coming Soon</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        ---
+
+        <section id="experience" class="page">
+            <h2 class="text-3xl md:text-4xl font-bold text-white text-center mb-12">Leadership & Extracurricular Experience</h2>
+            <div class="relative border-l-2 border-cyan-700 ml-4 md:ml-0 max-w-2xl mx-auto">
+                <div class="mb-12 ml-8">
+                    <div class="absolute w-4 h-4 bg-cyan-500 rounded-full -left-2.5 border-2 border-white"></div>
+                    <h3 class="text-2xl font-bold text-white mt-1">Cadet Corporal (CPL)</h3>
+                    <h4 class="text-lg font-medium text-slate-300 mb-2">BNCC, BNMPC Wing</h4>
+                    <p class="text-slate-400">Developed leadership, discipline, and teamwork skills through structured training and activities. Responsible for guiding and mentoring junior cadets.</p>
+                    <div class="mt-4 flex flex-wrap gap-2">
+                        <img src="BNCC1.jpg" onerror="this.onerror=null;this.src='https://placehold.co/100x100/1e293b/94a3b8?text=BNCC';" alt="BNCC Experience 1" class="w-24 h-24 object-cover rounded-md shadow-md">
+                        <img src="BNCC2.jpg" onerror="this.onerror=null;this.src='https://placehold.co/100x100/1e293b/94a3b8?text=BNCC';" alt="BNCC Experience 2" class="w-24 h-24 object-cover rounded-md shadow-md">
+                        <img src="BNCC3.jpg" onerror="this.onerror=null;this.src='https://placehold.co/100x100/1e293b/94a3b8?text=BNCC';" alt="BNCC Experience 3" class="w-24 h-24 object-cover rounded-md shadow-md">
+                    </div>
+                </div>
+                <div class="ml-8">
+                    <div class="absolute w-4 h-4 bg-cyan-500 rounded-full -left-2.5 border-2 border-white"></div>
+                    <h3 class="text-2xl font-bold text-white mt-1">Adventure Tour Participant</h3>
+                    <h4 class="text-lg font-medium text-slate-300 mb-2">BIAAT Adventure Tour</h4>
+                    <p class="text-slate-400">Engaged in challenging outdoor activities, enhancing problem-solving abilities, resilience, and collaboration in a team-oriented environment.</p>
+                    <div class="mt-4 flex flex-wrap gap-2">
+                        <img src="BIAAT1.jpg" onerror="this.onerror=null;this.src='https://placehold.co/100x100/1e293b/94a3b8?text=BIAAT';" alt="BIAAT Experience 1" class="w-24 h-24 object-cover rounded-md shadow-md">
+                        <img src="BIAAT2.jpg" onerror="this.onerror=null;this.src='https://placehold.co/100x100/1e293b/94a3b8?text=BIAAT';" alt="BIAAT Experience 2" class="w-24 h-24 object-cover rounded-md shadow-md">
+                        <img src="BIAAT3.jpg" onerror="this.onerror=null;this.src='https://placehold.co/100x100/1e293b/94a3b8?text=BIAAT';" alt="BIAAT Experience 3" class="w-24 h-24 object-cover rounded-md shadow-md">
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        ---
+        
+        <section id="education" class="page">
+            <h2 class="text-3xl md:text-4xl font-bold text-white text-center mb-12">Education</h2>
+            <div class="max-w-3xl mx-auto space-y-8">
+                <div class="bg-slate-800 p-6 rounded-lg shadow-lg flex flex-col sm:flex-row items-center gap-6">
+                    <img src="institute1.jpg" onerror="this.onerror=null;this.src='https://placehold.co/100x100/1e293b/94a3b8?text=AIUB';" alt="AIUB Logo" class="w-20 h-20 object-contain rounded-md mb-4 sm:mb-0">
+                    <div>
+                        <p class="text-cyan-400 font-semibold">2023 - Present</p>
+                        <h3 class="text-xl font-bold text-white mt-1">BSc in Computer Science</h3>
+                        <p class="text-slate-300">American International University-Bangladesh (AIUB)</p>
+                    </div>
+                </div>
+                <div class="bg-slate-800 p-6 rounded-lg shadow-lg flex flex-col sm:flex-row items-center gap-6">
+                    <img src="institute2.jpg" onerror="this.onerror=null;this.src='https://placehold.co/100x100/1e293b/94a3b8?text=BNMPC';" alt="BNMPC Logo" class="w-20 h-20 object-contain rounded-md mb-4 sm:mb-0">
+                    <div>
+                        <p class="text-cyan-400 font-semibold">2018 - 2021</p>
+                        <h3 class="text-xl font-bold text-white mt-1">Higher Secondary Certificate (HSC)</h3>
+                        <p class="text-slate-300">Bir Shreshtha Noor Mohammad Public College (BNMPC)</p>
+                    </div>
+                </div>
+                <div class="bg-slate-800 p-6 rounded-lg shadow-lg flex flex-col sm:flex-row items-center gap-6">
+                    <img src="institute3.jpg" onerror="this.onerror=null;this.src='https://placehold.co/100x100/1e293b/94a3b8?text=JZS';" alt="Jamalpur Zilla School Logo" class="w-20 h-20 object-contain rounded-md mb-4 sm:mb-0">
+                    <div>
+                        <h3 class="text-xl font-bold text-white">Secondary & Junior School</h3>
+                        <p class="text-slate-300">Jamalpur Zilla School</p>
+                    </div>
+                </div>
+                <div class="bg-slate-800 p-6 rounded-lg shadow-lg flex flex-col sm:flex-row items-center gap-6">
+                    <img src="institute4.jpg" onerror="this.onerror=null;this.src='https://placehold.co/100x100/1e293b/94a3b8?text=BGGPS';" alt="Border Guard School Logo" class="w-20 h-20 object-contain rounded-md mb-4 sm:mb-0">
+                    <div>
+                        <h3 class="text-xl font-bold text-white">Primary School</h3>
+                        <p class="text-slate-300">Border Guard Government Primary School, Mirpur, Kushtia</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        ---
+
+        <section id="creative" class="page">
+            <h2 class="text-3xl md:text-4xl font-bold text-white text-center mb-12">Creative Work</h2>
+            
+            <div class="mb-16">
+                <h3 class="text-2xl md:text-3xl font-bold text-cyan-400 text-center mb-6">Photography</h3>
+                <p class="text-slate-400 max-w-2xl mx-auto text-center mb-8">A collection of moments captured through my lens, showcasing a passion for visual storytelling and composition.</p>
+                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+                    <img src="photography1.jpg" onerror="this.onerror=null;this.src='https://placehold.co/400x300/1e293b/94a3b8?text=Photo+1';" alt="Photography 1" class="w-full h-auto object-cover rounded-lg shadow-md hover:shadow-cyan-500/20 transition-shadow">
+                    <img src="photography2.jpg" onerror="this.onerror=null;this.src='https://placehold.co/400x300/1e293b/94a3b8?text=Photo+2';" alt="Photography 2" class="w-full h-auto object-cover rounded-lg shadow-md hover:shadow-cyan-500/20 transition-shadow">
+                    <img src="photography3.jpg" onerror="this.onerror=null;this.src='https://placehold.co/400x300/1e293b/94a3b8?text=Photo+3';" alt="Photography 3" class="w-full h-auto object-cover rounded-lg shadow-md hover:shadow-cyan-500/20 transition-shadow">
+                </div>
+            </div>
+
+            <div>
+                <h3 class="text-2xl md:text-3xl font-bold text-cyan-400 text-center mb-6">3D Design</h3>
+                <p class="text-slate-400 max-w-2xl mx-auto text-center mb-8">Showcasing my work in 3D modeling and design, demonstrating creativity and proficiency in tools like Shapr3D and Autocad.</p>
+                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+                    <img src="3D_design1.jpg" onerror="this.onerror=null;this.src='https://placehold.co/400x300/1e293b/94a3b8?text=3D+Design+1';" alt="3D Design 1" class="w-full h-auto object-cover rounded-lg shadow-md hover:shadow-cyan-500/20 transition-shadow">
+                    <img src="3D_design2.jpg" onerror="this.onerror=null;this.src='https://placehold.co/400x300/1e293b/94a3b8?text=3D+Design+2';" alt="3D Design 2" class="w-full h-auto object-cover rounded-lg shadow-md hover:shadow-cyan-500/20 transition-shadow">
+                    <img src="3D_design3.jpg" onerror="this.onerror=null;this.src='https://placehold.co/400x300/1e293b/94a3b8?text=3D+Design+3';" alt="3D Design 3" class="w-full h-auto object-cover rounded-lg shadow-md hover:shadow-cyan-500/20 transition-shadow">
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="bg-slate-900 border-t border-slate-800 mt-12">
+        <div class="container mx-auto px-6 py-6 text-center text-slate-400">
+            <p>&copy; 2025 Md Arif Mahmud Oyion. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const navLinks = document.querySelectorAll('.nav-link');
+            const sections = document.querySelectorAll('section');
+            const themeToggle = document.getElementById('theme-toggle');
+            const htmlElement = document.documentElement;
+            const sunIcon = document.getElementById('sun-icon');
+            const moonIcon = document.getElementById('moon-icon');
+            const body = document.body;
+            const header = document.querySelector('header');
+
+            // --- Theme Toggle Logic ---
+            const applyTheme = (theme) => {
+                if (theme === 'dark') {
+                    htmlElement.classList.add('dark');
+                    body.classList.add('bg-slate-900', 'text-slate-300');
+                    body.classList.remove('bg-white', 'text-slate-800');
+                    header.classList.add('bg-slate-900/70');
+                    header.classList.remove('bg-white/70');
+                    sunIcon.classList.remove('hidden');
+                    moonIcon.classList.add('hidden');
+                } else {
+                    htmlElement.classList.remove('dark');
+                    body.classList.add('bg-white', 'text-slate-800');
+                    body.classList.remove('bg-slate-900', 'text-slate-300');
+                    header.classList.add('bg-white/70');
+                    header.classList.remove('bg-slate-900/70');
+                    sunIcon.classList.add('hidden');
+                    moonIcon.classList.remove('hidden');
+                }
+            };
+
+            const getInitialTheme = () => {
+                if (localStorage.getItem('theme')) {
+                    return localStorage.getItem('theme');
+                }
+                return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+            };
+
+            const initialTheme = getInitialTheme();
+            applyTheme(initialTheme);
+            
+            themeToggle.addEventListener('click', () => {
+                const currentTheme = htmlElement.classList.contains('dark') ? 'dark' : 'light';
+                const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+                
+                localStorage.setItem('theme', newTheme);
+                applyTheme(newTheme);
+            });
+
+            // --- Mobile Menu Toggle ---
+            mobileMenuButton.addEventListener('click', function() {
+                mobileMenu.classList.toggle('hidden');
+            });
+
+            // Close mobile menu when a link is clicked
+            mobileMenu.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileMenu.classList.add('hidden');
+                });
+            });
+
+            // --- Active Navigation Link Logic ---
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.5 
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const id = entry.target.id;
+                        navLinks.forEach(link => {
+                            link.classList.remove('active');
+                            if (link.getAttribute('href') === `#${id}`) {
+                                link.classList.add('active');
+                            }
+                        });
+                    }
+                });
+            }, observerOptions);
+
+            sections.forEach(section => {
+                observer.observe(section);
+            });
+        });
+    </script>
+</body>
+</html>
